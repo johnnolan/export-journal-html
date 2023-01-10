@@ -1,5 +1,6 @@
 import { EJHCONST } from "./EJHCONST";
 import Logger from "./Logger";
+import PrintButton from "./PrintButton";
 
 Hooks.on("init", function () {
   Logger.log(
@@ -9,45 +10,20 @@ Hooks.on("init", function () {
 });
 
 Hooks.once("ready", async function () {
-
-  /*
-    - Get HTML from journal directly
-    - Find all images, fetch and base64 encode them
-    - Replace images with encoding
-    - Use getComputedStyle() or extract styles to html
-    - Prompt download of HTML
-  */
-});
-
-function addButton(app, html) {
-  const link = $(`<a title="Print"><i class="fas fa-print"></i></a>`);
-  link.on("click", (evt) => {
-    const element = document
-      .getElementsByClassName(
-        "app window-app sheet journal-sheet journal-entry"
-      )[0]
-      .getElementsByClassName("journal-entry-page")[0];
-    const width = element.clientWidth;
-    const height = element.clientHeight;
-    html2canvas(element, {
-      useCORS: true,
-    }).then((canvas) => {
-      const options = {
-        orientation: "p",
-        unit: "px",
-        format: [width + 15, height],
-      };
-      const img = canvas.toDataURL("image/png");
-      const pdf = new jsPDF(options);
-      pdf.addImage(img, "PNG", 15, 15, width, height);
-      pdf.save("your-filename.pdf");
-    });
-    /*$(".ez-print").removeClass("ez-print");
-    html.addClass("ez-print");
-    window.print();*/
+  Hooks.on(
+    "renderJournalTextPageSheet",
+    async function (app: JournalTextPageSheet) {
+      PrintButton.Delete();
+      await PrintButton.Add(app);
+    }
+  );
+  Hooks.on("renderJournalImagePageSheet", async function () {
+    PrintButton.Delete();
   });
-
-  html.find(".window-title").after(link);
-}
-
-Hooks.on("renderJournalSheet", addButton);
+  Hooks.on("renderJournalPDFPageSheet", async function () {
+    PrintButton.Delete();
+  });
+  Hooks.on("renderJournalVideoPageSheet", async function () {
+    PrintButton.Delete();
+  });
+});

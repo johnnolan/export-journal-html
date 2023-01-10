@@ -10,10 +10,6 @@ assignees: johnnolan
 **Describe the bug**
 A clear and concise description of what the bug is.
 
-**What version of FoundryVTT are you using?**
-[] 0.7.x
-[] 0.8.x
-
 **To Reproduce**
 Steps to reproduce the behavior:
 1. Go to '...'
@@ -21,9 +17,11 @@ Steps to reproduce the behavior:
 3. Scroll down to '....'
 4. See error
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**screenshot of the output if any is generated**
 
-**Screenshots**
-Please add a screenshot of your any errors in the console or elsewhere if it applies.
+
+**A screenshot the the content in the Journal view**
+
+
+**The HTML of the Journal causing issues**
 

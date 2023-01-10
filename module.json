@@ -1,7 +1,7 @@
 {
 	"id": "export-journal-html",
 	"title": "Export Journal to HTML",
-	"description": "Export Journal entries to HTML.",
+	"description": "Export FoundryVTT Journal entries to HTML for saving locally or print to PDF.",
 	"version": "This is auto replaced",
 	"library": "false",
 	"manifestPlusVersion": "1.0.0",

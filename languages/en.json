@@ -1,3 +1,4 @@
 {
-  "ExportJournalHtml.name": "Export Journal to HTML"
+  "ExportJournalHtml.name": "Export Journal to HTML",
+  "ExportJournalHtml.description": "Export FoundryVTT Journal entries to HTML for saving locally or print to PDF"
 }

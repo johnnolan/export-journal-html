@@ -5,6 +5,12 @@ declare global {
   interface Window {
     Hooks: typeof Hooks;
   }
+
+  interface JournalTextPageSheet {
+    object: {
+      uuid: string;
+    };
+  }
 }
 
 export {};

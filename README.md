@@ -1,5 +1,5 @@
-![](https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dflat%26url%3Dhttps%3A%2F%2Fgithub.com%2Fjohnnolan%2Fexport-journal-html%2Freleases%2Fdownload%2F3.9.7%2Fmodule.json)
-![](https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fsystem%3FnameType%3Dfull%26showVersion%3D1%26style%3Dflat%26url%3Dhttps%3A%2F%2Fgithub.com%2Fjohnnolan%2Fexport-journal-html%2Freleases%2Fdownload%2F3.9.7%2Fmodule.json)
+![](https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dflat%26url%3Dhttps%3A%2F%2Fgithub.com%2Fjohnnolan%2Fexport-journal-html%2Freleases%2Fdownload%2F0.0.1%2Fmodule.json)
+![](https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fsystem%3FnameType%3Dfull%26showVersion%3D1%26style%3Dflat%26url%3Dhttps%3A%2F%2Fgithub.com%2Fjohnnolan%2Fexport-journal-html%2Freleases%2Fdownload%2F0.0.1%2Fmodule.json)
 
 ![Latest Release Download Count](https://img.shields.io/github/downloads/johnnolan/export-journal-html/latest/module.zip)
 ![GitHub package.json version](https://img.shields.io/github/release/johnnolan/export-journal-html)
@@ -16,7 +16,27 @@
 
 # Export Journal to HTML
 
+A system agnostic way of exporting FoundryVTT Journal entries to HTML for saving locally or print to PDF.
 
+## Setup and use
+
+- Enable the module
+- On Text Journal Entries, click on the print icon
+- A pop up will appear with the Journal content in
+- Either save the page as HTML or Print the page and choose Destination as `Print to PDF`
+
+## Key things this module changes on export
+
+- Tries to correctly link any images in CSS and HTML
+- Replaces any `@UUID` links with the label in them
+
+## BUGS
+
+There most definitely will be layout issues and broken links. Please ensure you send the following with any bug report
+
+1. A screenshot of the output if any is generated
+2. A screenshot the the content in the Journal view
+3. The HTML of the Journal causing issues
 
 ## Contributing
 

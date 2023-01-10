@@ -1,6 +1,6 @@
 {
   "name": "export-journal-html",
-  "description": "Export Journal entries to HTML",
+  "description": "Export Journal entries to HTML for saving locally or print to PDF",
   "version": "1.0.0",
   "repository": "git@github.com:johnnolan/foundryvtt-wild-magic.git",
   "author": "John Nolan <me@johnnolan.dev>",

@@ -25,6 +25,8 @@ module.exports = {
     "!scripts/**/*.test.ts",
     "!scripts/**/*.d.ts",
     "!scripts/module.ts",
+    "!scripts/EJHCONST.ts",
+    "!scripts/DownloadJournal.ts",
     "!scripts/Logger.ts",
   ],
 };
