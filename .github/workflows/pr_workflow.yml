@@ -1,0 +1,27 @@
+name: "[Workflow] PR"
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    name: ESLint Javascript
+    uses: ./.github/workflows/lint_job.yml
+
+  test:
+    name: Jest Tests
+    uses: ./.github/workflows/test_job.yml
+
+  publish_unit_tests:
+    name: Publish Unit Tests
+    needs: ['lint', 'test']
+    uses: ./.github/workflows/publish_unit_tests_job.yml
+
+  sonar_cloud:
+    name: Sonar Cloud
+    needs: ['lint', 'test']
+    uses: ./.github/workflows/sonar_cloud_job.yml
+    secrets:
+      SONARCLOUD_SECRET: ${{ secrets.SONARCLOUD_TOKEN }}

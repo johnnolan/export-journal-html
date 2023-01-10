@@ -1,0 +1,14 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:base",
+        "schedule:weekends",
+        ":pinAllExceptPeerDependencies",
+        ":automergeAll",
+        "npm:unpublishSafe",
+        "group:all"
+    ],
+    "lockFileMaintenance": {
+        "enabled": true
+    }
+}

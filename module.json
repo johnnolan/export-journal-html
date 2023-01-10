@@ -1,0 +1,46 @@
+{
+	"id": "export-journal-html",
+	"title": "Export Journal to HTML",
+	"description": "Export Journal entries to HTML.",
+	"version": "This is auto replaced",
+	"library": "false",
+	"manifestPlusVersion": "1.0.0",
+	"compatibility": {
+		"minimum": "10",
+		"verified": "10.291",
+		"maximum": "10"
+	},
+	"authors": [
+		{
+			"name": "John Nolan",
+			"url": "https://github.com/johnnolan",
+			"discord": "JB#2780",
+			"website": "https://www.johnnolan.dev"
+		}
+	],
+	"relationships": {
+		"systems": []
+	},
+	"packs": [],
+	"conflicts": [],
+	"esmodules": [
+		"/dist/module.js"
+	],
+	"scripts": [],
+	"styles": [],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "languages/en.json"
+		}
+	],
+	"readme": "https://github.com/johnnolan/export-journal-html/blob/main/README.md",
+	"license": "https://github.com/johnnolan/export-journal-html/blob/main/LICENSE",
+	"bugs": "https://github.com/johnnolan/export-journal-html/issues/new/choose",
+	"changelog": "https://github.com/johnnolan/export-journal-html/releases",
+	"socket": true,
+	"url": "This is auto replaced",
+	"manifest": "This is auto replaced",
+	"download": "This is auto replaced"
+}
