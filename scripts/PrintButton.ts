@@ -12,7 +12,9 @@ class PrintButton {
     const link = $(HTMLParser.CreateLink(uuid));
 
     link.on("click", async (evt) => {
-      const journalEntryPage = await fromUuid(evt.target?.dataset?.journalUuid ?? "");
+      const journalEntryPage = await fromUuid(
+        evt.target?.dataset?.journalUuid ?? ""
+      );
       if (!journalEntryPage) {
         return;
       }
