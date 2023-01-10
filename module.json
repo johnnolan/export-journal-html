@@ -18,9 +18,7 @@
 			"website": "https://www.johnnolan.dev"
 		}
 	],
-	"relationships": {
-		"systems": []
-	},
+	"relationships": {},
 	"packs": [],
 	"conflicts": [],
 	"esmodules": [
