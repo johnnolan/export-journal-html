@@ -45,7 +45,7 @@ Removes the background images leaving you with a white background.
 
 This allows you to set override CSS rules for the final export. You may need to set the `!important` attribute on your rules for them to take effect.
 
-e.g. `body { background-color: red; }` will give the following look.
+e.g. `body { background-color: red !important; }` will give the following look.
 
 [![Custom CSS Example](https://raw.githubusercontent.com/johnnolan/export-journal-html/main/images/custom-css.jpg)](https://raw.githubusercontent.com/johnnolan/export-journal-html/main/images/custom-css.jpg)
 
