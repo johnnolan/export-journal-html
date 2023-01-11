@@ -25,6 +25,10 @@ A system agnostic way of exporting FoundryVTT Journal entries to HTML for saving
 - A pop up will appear with the Journal content in
 - Either save the page as HTML or Print the page and choose Destination as `Print to PDF`
 
+Print Icon Example
+
+[![Print Icon Example](https://raw.githubusercontent.com/johnnolan/export-journal-html/main/images/print-icon.jpg)](https://raw.githubusercontent.com/johnnolan/export-journal-html/main/images/print-icon.jpg)
+
 ## Key things this module changes on export
 
 - Tries to correctly link any images in CSS and HTML
