@@ -1,4 +1,8 @@
 {
   "ExportJournalHtml.name": "Export Journal to HTML",
-  "ExportJournalHtml.description": "Export FoundryVTT Journal entries to HTML for saving locally or print to PDF"
+  "ExportJournalHtml.description": "Export FoundryVTT Journal entries to HTML for saving locally or print to PDF",
+  "ExportJournalHtml.opt_remove_background_name": "Remove images on background",
+  "ExportJournalHtml.opt_remove_background_hint": "Removes all standard background images to show a white background. If some still show, use the Custom CSS option to add any extra rules needed for your setup.",
+  "ExportJournalHtml.opt_custom_css_name": "Add custom CSS",
+  "ExportJournalHtml.opt_custom_css_hint": "Add your own override styles to the Journal on export."
 }

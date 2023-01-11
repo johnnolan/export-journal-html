@@ -29,6 +29,26 @@ Print Icon Example
 
 [![Print Icon Example](https://raw.githubusercontent.com/johnnolan/export-journal-html/main/images/print-icon.jpg)](https://raw.githubusercontent.com/johnnolan/export-journal-html/main/images/print-icon.jpg)
 
+## Options
+
+By default, the output will look like this
+
+[![Standard Example](https://raw.githubusercontent.com/johnnolan/export-journal-html/main/images/standard.jpg)](https://raw.githubusercontent.com/johnnolan/export-journal-html/main/images/standard.jpg)
+
+### Remove images on background
+
+Removes the background images leaving you with a white background.
+
+[![Remove Background Example](https://raw.githubusercontent.com/johnnolan/export-journal-html/main/images/remove-background.jpg)](https://raw.githubusercontent.com/johnnolan/export-journal-html/main/images/remove-background.jpg)
+
+## Add custom CSS
+
+This allows you to set override CSS rules for the final export. You may need to set the `!important` attribute on your rules for them to take effect.
+
+e.g. `body { background-color: red; }` will give the following look.
+
+[![Custom CSS Example](https://raw.githubusercontent.com/johnnolan/export-journal-html/main/images/custom-css.jpg)](https://raw.githubusercontent.com/johnnolan/export-journal-html/main/images/custom-css.jpg)
+
 ## Key things this module changes on export
 
 - Tries to correctly link any images in CSS and HTML
