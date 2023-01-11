@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.3 - 2023-01-11
+
+### Features
+
+- Initial release version
+
 ## 0.0.2 - 2023-01-11
 
 ### Features
