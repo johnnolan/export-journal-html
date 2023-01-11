@@ -19,7 +19,12 @@ class PrintButton {
         return;
       }
 
-      DownloadJournal.Get(HTMLParser.Parse(journalEntryPage.text.content));
+      DownloadJournal.Get(
+        HTMLParser.Parse(
+          journalEntryPage.text.content,
+          journalEntryPage?.name ?? ""
+        )
+      );
     });
 
     $(document).find(".journal-sheet h4.window-title").after(link);

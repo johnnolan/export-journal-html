@@ -1,7 +1,7 @@
 import CSSParser from "./CSSParser";
 
 class HTMLParser {
-  public static Parse(journalHtmlContent: string): string {
+  public static Parse(journalHtmlContent: string, journalName: string): string {
     const journalHtml = `<html>
       <head>
         <style type="text/css">${CSSParser.Get(document)}</style>
@@ -11,6 +11,9 @@ class HTMLParser {
           <section class="journal-entry-content flexcol">
             <div class="journal-entry-pages locked single-page">
               <article class="journal-entry-page text">
+                <header class="journal-page-header">
+                  <h1>${journalName}</h1>
+                </header>
                 <section class="journal-page-content">
                   ${journalHtmlContent}
                 </section>
