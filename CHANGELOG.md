@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0 - 2023-01-11
+
+### Features
+
+- Add custom CSS to exported HTML
+- Remove background images from HTML giving a white background
+
+[See README on github for examples](https://github.com/johnnolan/export-journal-html#options)
+
 ## 0.0.3 - 2023-01-11
 
 ### Features
