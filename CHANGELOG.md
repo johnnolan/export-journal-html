@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.2 - 2023-01-11
+
+### Features
+
+- Add the Journal name to the output
+
 ## 0.0.1 - 2023-01-10
 
 ### Feature
