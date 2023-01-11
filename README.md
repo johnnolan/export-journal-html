@@ -30,13 +30,20 @@ A system agnostic way of exporting FoundryVTT Journal entries to HTML for saving
 - Tries to correctly link any images in CSS and HTML
 - Replaces any `@UUID` links with the label in them
 
-## BUGS
+## Known Issues
+
+- If you don't see anything, it could be your adblocker. Check that it is not blocking popups for your foundry site
+- The standalone windows application will prompt you to download and not show a popup. I recommend using a browser to log in to do the export for now
+
+## Bugs
 
 There most definitely will be layout issues and broken links. Please ensure you send the following with any bug report
 
 1. A screenshot of the output if any is generated
 2. A screenshot the the content in the Journal view
 3. The HTML of the Journal causing issues
+
+[Raise a Bug Here](https://github.com/johnnolan/export-journal-html/issues/new?assignees=johnnolan&labels=bug&template=bug_report.md&title=%5BBUG%5D)
 
 ## Contributing
 
