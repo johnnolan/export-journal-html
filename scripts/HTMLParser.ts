@@ -1,4 +1,5 @@
 import CSSParser from "./CSSParser";
+import { EJHCONST } from "./EJHCONST";
 
 class HTMLParser {
   public static Parse(journalHtmlContent: string, journalName: string): string {
@@ -21,6 +22,7 @@ class HTMLParser {
             </div>
           </section>
         </div>
+        ${this._showPrintDialog()}
       </body>
     </html>`;
     return HTMLParser._regexReplace(journalHtml);
@@ -32,7 +34,7 @@ class HTMLParser {
   </a>`;
   }
 
-  public static _regexReplace(journalHtml: string) {
+  private static _regexReplace(journalHtml: string) {
     const regUUID = /@UUID\[(.+)\]\{(.+)\}/g;
     const regUrl = /img src="((?!http:\/\/)(?!https:\/\/))/g;
     const regCssUrl = /(src|background): url\("\.\./g;
@@ -47,6 +49,17 @@ class HTMLParser {
     );
 
     return journalHtml;
+  }
+
+  private static _showPrintDialog(): string {
+    let script = "";
+    if (
+      game.settings.get(`${EJHCONST.MODULE_ID}`, `${EJHCONST.OPT_PRINT_DIALOG}`)
+    ) {
+      script = `<script>setTimeout("window.print()", 100);</script>`;
+    }
+
+    return script;
   }
 }
 
