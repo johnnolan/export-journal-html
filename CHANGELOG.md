@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.0 - 2023-01-12
+
+### Features
+
+- Export HTML in `View Multiple Pages` or `Single Page` Journal option. Allows you to easily print all Journal Pages in one go or individual one depending on your view
+- Optionally open print dialog after export (Enable in Settings)
+
 ## 0.2.0 - 2023-01-11
 
 ### Features
