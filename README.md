@@ -31,6 +31,10 @@ Print Icon Example
 
 ## Options
 
+If you are viewing pages in the `View Multiple Pages` journal view then all text type pages will be exported.
+
+If you are viewing single pages then only that page will print.
+
 By default, the output will look like this
 
 [![Standard Example](https://raw.githubusercontent.com/johnnolan/export-journal-html/main/images/standard.jpg)](https://raw.githubusercontent.com/johnnolan/export-journal-html/main/images/standard.jpg)
