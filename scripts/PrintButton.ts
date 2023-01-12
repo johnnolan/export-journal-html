@@ -35,8 +35,7 @@ class PrintButton {
 
       const finalPages = [];
 
-      for (let i = 0; i < journalPages.length; i++) {
-        const journalPageId = journalPages[i];
+      for (const journalPageId of journalPages) {
         finalPages.push(journalEntry.pages.get(journalPageId));
       }
 
