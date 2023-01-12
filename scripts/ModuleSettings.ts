@@ -32,6 +32,19 @@ class ModuleSettings {
         type: String,
       }
     );
+
+    game.settings.register(
+      `${EJHCONST.MODULE_ID}`,
+      `${EJHCONST.OPT_PRINT_DIALOG}`,
+      {
+        name: game.i18n.format("ExportJournalHtml.opt_print_dialog_name"),
+        hint: game.i18n.format("ExportJournalHtml.opt_print_dialog_hint"),
+        scope: "world",
+        config: true,
+        default: false,
+        type: Boolean,
+      }
+    );
   }
 }
 

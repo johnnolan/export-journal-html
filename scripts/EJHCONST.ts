@@ -4,4 +4,5 @@ export const EJHCONST = {
 
   OPT_REMOVE_BACKGROUND: "option-remove-background",
   OPT_CUSTOM_CSS: "option-custom-css",
+  OPT_PRINT_DIALOG: "option-print-dialog",
 } as const;
