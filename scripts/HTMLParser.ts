@@ -2,7 +2,7 @@ import CSSParser from "./CSSParser";
 import { EJHCONST } from "./EJHCONST";
 
 class HTMLParser {
-  public static Parse(journalHtmlContent: string, journalName: string): string {
+  public static Create(journalPages: Array<JournalEntryPage>): string {
     const journalHtml = `<html>
       <head>
         <style type="text/css">${CSSParser.Get(document)}</style>
@@ -11,14 +11,7 @@ class HTMLParser {
         <div class="sheet journal-sheet journal-entry">
           <section class="journal-entry-content flexcol">
             <div class="journal-entry-pages locked single-page">
-              <article class="journal-entry-page text">
-                <header class="journal-page-header">
-                  <h1>${journalName}</h1>
-                </header>
-                <section class="journal-page-content">
-                  ${journalHtmlContent}
-                </section>
-              </article>
+              ${this._renderJournalPage(journalPages)}
             </div>
           </section>
         </div>
@@ -28,9 +21,30 @@ class HTMLParser {
     return HTMLParser._regexReplace(journalHtml);
   }
 
-  public static CreateLink(uuid: string): string {
+  private static _renderJournalPage(
+    journalPages: Array<JournalEntryPage>
+  ): string {
+    let html = ``;
+    console.debug(journalPages);
+    journalPages.forEach((journalPage) => {
+      console.debug(journalPage);
+      if (journalPage.type === "text") {
+        html += `<article class="journal-entry-page text">
+      <header class="journal-page-header">
+        <h1>${journalPage.name}</h1>
+      </header>
+      <section class="journal-page-content">
+        ${journalPage.text.content}
+      </section>
+    </article>`;
+      }
+    });
+    return html;
+  }
+
+  public static CreateLink(uuid: string, pagesArray: string): string {
     return `<a title="Print" class="ejh-print">
-    <i class="fas fa-print" data-journal-uuid="${uuid}"></i>
+    <i class="fas fa-print" data-journal-uuid="${uuid}" data-journal-pages="${pagesArray}"></i>
   </a>`;
   }
 

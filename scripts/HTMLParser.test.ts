@@ -10,11 +10,11 @@ describe("HTMLParser", () => {
       };
     });
     it("It returns the correct link markup", async () => {
-      const parsedCss = HTMLParser.CreateLink("some-uuid.well");
+      const parsedCss = HTMLParser.CreateLink("some-uuid.well", "test1,test2");
 
       expect(parsedCss).toBe(
         `<a title=\"Print\" class=\"ejh-print\">
-    <i class=\"fas fa-print\" data-journal-uuid=\"some-uuid.well\"></i>
+    <i class=\"fas fa-print\" data-journal-uuid=\"some-uuid.well\" data-journal-pages=\"test1,test2\"></i>
   </a>`
       );
     });
