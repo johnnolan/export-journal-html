@@ -96,4 +96,50 @@ describe("HTMLParser", () => {
       expect(parsedHtml).toContain(`window.print()`);
     });
   });
+
+  describe("Given I create a new html page", () => {
+    beforeEach(() => {
+      (global as any).window = {
+        location: {
+          host: "localhost",
+          protocol: "https:",
+        },
+      };
+
+      (global as any).game = {
+        settings: {
+          get: jest.fn().mockReturnValueOnce(false),
+        },
+      };
+
+      (global as any).document = {
+        styleSheets: [
+          {
+            href: "test.css",
+            cssRules: [
+              {
+                cssText: ".myStyle1 { background-color: rgb(255, 255, 255); }",
+              },
+            ],
+          }
+        ],
+      };
+    });
+
+    it("It returns the correct markup", async () => {
+      const journalPages = [{
+        name: "Test",
+        type: "text",
+        text: {
+          content: "<div>Test Content</div>"
+        }
+      }]
+      const parsedHtml = HTMLParser.Create(journalPages);
+
+      expect(parsedHtml).toContain(`<h1>${journalPages[0].name}</h1>`);
+      expect(parsedHtml).toContain(`<section class="journal-page-content">
+        ${journalPages[0].text.content}
+      </section>`);
+    });
+  });
 });

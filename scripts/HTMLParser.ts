@@ -25,9 +25,7 @@ class HTMLParser {
     journalPages: Array<JournalEntryPage>
   ): string {
     let html = ``;
-    console.debug(journalPages);
     journalPages.forEach((journalPage) => {
-      console.debug(journalPage);
       if (journalPage.type === "text") {
         html += `<article class="journal-entry-page text">
       <header class="journal-page-header">

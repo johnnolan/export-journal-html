@@ -15,7 +15,7 @@ module.exports = {
   reporters: ["default", "jest-junit"],
   coverageThreshold: {
     global: {
-      lines: 50,
+      lines: 90,
     },
   },
   collectCoverage: true,
