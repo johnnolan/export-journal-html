@@ -14,19 +14,10 @@ Hooks.on("init", function () {
 
 Hooks.once("ready", async function () {
   Hooks.on(
-    "renderJournalTextPageSheet",
-    async function (app: JournalTextPageSheet) {
+    "renderJournalSheet",
+    async function (app: JournalSheet, _html: JQuery, changes: unknown) {
       PrintButton.Delete();
-      await PrintButton.Add(app);
+      await PrintButton.Add(app, changes.pages);
     }
   );
-  Hooks.on("renderJournalImagePageSheet", async function () {
-    PrintButton.Delete();
-  });
-  Hooks.on("renderJournalPDFPageSheet", async function () {
-    PrintButton.Delete();
-  });
-  Hooks.on("renderJournalVideoPageSheet", async function () {
-    PrintButton.Delete();
-  });
 });
