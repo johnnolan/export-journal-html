@@ -6,11 +6,7 @@ class CSSParser {
     for (let i = 0; i < document.styleSheets.length; i++) {
       const styleSheet = document.styleSheets[i];
       if (styleSheet.href && styleSheet.href.indexOf(".css") > -1) {
-        cssRules += styleSheet.cssRules
-          ? Array.from(styleSheet.cssRules)
-              .map((rule) => this._stringifyRule(rule))
-              .join("\n")
-          : "";
+        cssRules += `<link href="${styleSheet.href}" rel="stylesheet" type="text/css" media="all">`;
       }
     }
     return cssRules;
@@ -21,7 +17,7 @@ class CSSParser {
   }
 
   private static _cssBuilder(): string {
-    let rules = this._cssOverrides();
+    let rules = `<style type="text/css">${this._cssOverrides()}`;
     if (
       game.settings.get(
         `${EJHCONST.MODULE_ID}`,
@@ -31,6 +27,7 @@ class CSSParser {
       rules += this._cssRemoveBackground();
     }
     rules += this._cssCustom();
+    rules += `</style>`;
 
     return rules;
   }
@@ -40,7 +37,7 @@ class CSSParser {
   }
 
   private static _cssRemoveBackground(): string {
-    return "body { box-shadow: none !important; } .sheet.journal-entry .journal-entry-content { background: none !important; border: none !important; } ";
+    return "body { background-color: white; background-image: none !important; box-shadow: none !important; } .sheet.journal-entry .journal-entry-content { background: none !important; border: none !important; } ";
   }
 
   private static _cssCustom(): string {

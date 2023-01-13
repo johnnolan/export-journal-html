@@ -52,8 +52,8 @@ describe("CSSParser", () => {
     it("It returns the contents as a string", async () => {
       const parsedCss = CSSParser.Get(document);
 
-      expect(parsedCss).toBe(`body { overflow: auto !important; height: auto !important; position: relative !important;} .myStyle1 { background-color: rgb(255, 255, 255); }.myStyle2 { background-color: rgb(255, 255, 255); }
-.myStyle3 { background-color: rgb(255, 255, 255); }`
+      expect(parsedCss).toBe(
+        `<style type="text/css">body { overflow: auto !important; height: auto !important; position: relative !important;} </style><link href="test.css" rel="stylesheet" type="text/css" media="all"><link href="test2.css" rel="stylesheet" type="text/css" media="all"><link href="test4.css" rel="stylesheet" type="text/css" media="all">`
       );
     });
   });
@@ -69,7 +69,7 @@ describe("CSSParser", () => {
                 cssText: ".myStyle1 { background-color: rgb(255, 255, 255); }",
               },
             ],
-          }
+          },
         ],
       };
 
@@ -83,7 +83,8 @@ describe("CSSParser", () => {
     it("It returns the contents as a string", async () => {
       const parsedCss = CSSParser.Get(document);
 
-      expect(parsedCss).toBe(`body { overflow: auto !important; height: auto !important; position: relative !important;} body { box-shadow: none !important; } .sheet.journal-entry .journal-entry-content { background: none !important; border: none !important; } .myStyle1 { background-color: rgb(255, 255, 255); }`
+      expect(parsedCss).toBe(
+        `<style type=\"text/css\">body { overflow: auto !important; height: auto !important; position: relative !important;} body { background-color: white; background-image: none !important; box-shadow: none !important; } .sheet.journal-entry .journal-entry-content { background: none !important; border: none !important; } </style><link href=\"test.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">`
       );
     });
   });
@@ -99,13 +100,16 @@ describe("CSSParser", () => {
                 cssText: ".myStyle1 { background-color: rgb(255, 255, 255); }",
               },
             ],
-          }
+          },
         ],
       };
 
       (global as any).game = {
         settings: {
-          get: jest.fn().mockReturnValueOnce(false).mockReturnValueOnce("body { background-color: red; }"),
+          get: jest
+            .fn()
+            .mockReturnValueOnce(false)
+            .mockReturnValueOnce("body { background-color: red; }"),
         },
       };
     });
@@ -113,7 +117,8 @@ describe("CSSParser", () => {
     it("It returns the contents as a string", async () => {
       const parsedCss = CSSParser.Get(document);
 
-      expect(parsedCss).toBe(`body { overflow: auto !important; height: auto !important; position: relative !important;} body { background-color: red; }.myStyle1 { background-color: rgb(255, 255, 255); }`
+      expect(parsedCss).toBe(
+        `<style type=\"text/css\">body { overflow: auto !important; height: auto !important; position: relative !important;} body { background-color: red; }</style><link href=\"test.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">`
       );
     });
   });

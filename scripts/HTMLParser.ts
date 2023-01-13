@@ -5,7 +5,7 @@ class HTMLParser {
   public static Create(journalPages: Array<JournalEntryPage>): string {
     const journalHtml = `<html>
       <head>
-        <style type="text/css">${CSSParser.Get(document)}</style>
+        ${CSSParser.Get(document)}
       </head>
       <body>
         <div class="sheet journal-sheet journal-entry">
@@ -50,6 +50,7 @@ class HTMLParser {
     const regUUID = /@UUID\[(.+)\]\{(.+)\}/g;
     const regUrl = /img src="((?!http:\/\/)(?!https:\/\/))/g;
     const regCssUrl = /(src|background): url\("\.\./g;
+    const fontAwesome = /(\/webfonts\/)/g;
     journalHtml = journalHtml.replaceAll(regUUID, "$2");
     journalHtml = journalHtml.replaceAll(
       regCssUrl,
@@ -59,6 +60,7 @@ class HTMLParser {
       regUrl,
       `img src="${window.location.protocol + "//" + window.location.host}/`
     );
+    journalHtml = journalHtml.replaceAll(fontAwesome, "/fonts/fontawesome$1");
 
     return journalHtml;
   }
