@@ -16,14 +16,14 @@
 
 # Export Journal to HTML
 
-A system agnostic way of exporting FoundryVTT Journal entries to HTML for saving locally or print to PDF.
+A system agnostic way of exporting FoundryVTT Journal entries to HTML for printing or generating a PDF.
 
 ## Setup and use
 
 - Enable the module
 - On Text Journal Entries, click on the print icon
 - A pop up will appear with the Journal content in
-- Either save the page as HTML or Print the page and choose Destination as `Print to PDF`
+- Print the page and choose Destination as `Print to PDF`
 
 Print Icon Example
 

@@ -1,4 +1,5 @@
 import DownloadJournal from "./DownloadJournal";
+import { EJHCONST } from "./EJHCONST";
 import HTMLParser from "./HTMLParser";
 
 class PrintButton {
@@ -39,7 +40,17 @@ class PrintButton {
         finalPages.push(journalEntry.pages.get(journalPageId));
       }
 
-      DownloadJournal.Get(HTMLParser.Create(finalPages));
+      if (game.settings.get(`${EJHCONST.MODULE_ID}`, `${EJHCONST.OPT_POPUP}`)) {
+        DownloadJournal.Popup(
+          HTMLParser.Create(finalPages),
+          journalEntry?.name ?? "Journal"
+        );
+      } else {
+        DownloadJournal.Tab(
+          HTMLParser.Create(finalPages),
+          journalEntry?.name ?? "Journal"
+        );
+      }
     });
 
     $(document).find(".journal-sheet h4.window-title").after(link);
