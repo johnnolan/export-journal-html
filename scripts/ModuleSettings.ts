@@ -45,6 +45,15 @@ class ModuleSettings {
         type: Boolean,
       }
     );
+
+    game.settings.register(`${EJHCONST.MODULE_ID}`, `${EJHCONST.OPT_POPUP}`, {
+      name: game.i18n.format("ExportJournalHtml.opt_popup_name"),
+      hint: game.i18n.format("ExportJournalHtml.opt_popup_hint"),
+      scope: "world",
+      config: true,
+      default: false,
+      type: Boolean,
+    });
   }
 }
 

@@ -6,5 +6,7 @@
   "ExportJournalHtml.opt_custom_css_name": "Add custom CSS",
   "ExportJournalHtml.opt_custom_css_hint": "Add your own override styles to the Journal on export.",
   "ExportJournalHtml.opt_print_dialog_name": "Show print dialog on open",
-  "ExportJournalHtml.opt_print_dialog_hint": "Show the browser Print dialog automatically on export."
+  "ExportJournalHtml.opt_print_dialog_hint": "Show the browser Print dialog automatically on export.",
+  "ExportJournalHtml.opt_popup_name": "Open in new popup",
+  "ExportJournalHtml.opt_popup_hint": "Disabled will open export in a new tab, enabled will open in a popup."
 }
