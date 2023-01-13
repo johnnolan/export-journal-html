@@ -5,6 +5,7 @@ class HTMLParser {
   public static Create(journalPages: Array<JournalEntryPage>): string {
     const journalHtml = `<html>
       <head>
+        <meta charset="utf-8">
         ${CSSParser.Get(document)}
       </head>
       <body>
