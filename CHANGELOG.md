@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.1 - 2023-01-13
+
+### Features
+
+- Fix fontawesome stylesheets not rendering
+- Add popup option as well as open in tab
+
 ## 0.4.0 - 2023-01-12
 
 ### Features
