@@ -1,6 +1,7 @@
 {
   "ExportJournalHtml.name": "Export Journal to HTML",
   "ExportJournalHtml.description": "A system agnostic way of exporting FoundryVTT Journal entries to HTML for printing or generating a PDF.",
+  "ExportJournalHtml.warn_electron": "Export Journal to HTML does not work within the standalone FVTT Application. Please use a browser.",
   "ExportJournalHtml.opt_remove_background_name": "Remove images on background",
   "ExportJournalHtml.opt_remove_background_hint": "Removes all standard background images to show a white background. If some still show, use the Custom CSS option to add any extra rules needed for your setup.",
   "ExportJournalHtml.opt_custom_css_name": "Add custom CSS",
