@@ -26,6 +26,13 @@ class PrintButton {
     const link = $(HTMLParser.CreateLink(uuid, pagesArray.join(",")));
 
     link.on("click", async (evt) => {
+      if (navigator.userAgent.toLowerCase().indexOf(" electron/") !== -1) {
+        ui.notifications.warn(
+          `${game.i18n.localize("ExportJournalHtml.warn_electron")}`
+        );
+        return;
+      }
+
       const journalUuid = evt.target?.dataset?.journalUuid;
       const journalPages = evt.target?.dataset?.journalPages?.split(",") ?? [];
 
