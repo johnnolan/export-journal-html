@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.5.2 - 2023-01-14
+
+### Refactor
+
+- Add warning message for users using the standalone Foundry Application
+- It is not currently possible to open popups from the application, but opening any browser and running it will work. If running locally this is usually [http://localhost:30000](http://localhost:30000)
+
 ## 0.5.1 - 2023-01-13
 
 ### Features
