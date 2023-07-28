@@ -5,7 +5,7 @@ import HTMLParser from "./HTMLParser";
 class PrintButton {
   public static async Add(
     app: JournalTextPageSheet,
-    pages: Array<JournalSheet>
+    pages: Array<JournalSheet>,
   ): Promise<void> {
     const uuid = app.object.uuid;
 
@@ -28,7 +28,7 @@ class PrintButton {
     link.on("click", async (evt) => {
       if (navigator.userAgent.toLowerCase().indexOf(" electron/") !== -1) {
         ui.notifications.warn(
-          `${game.i18n.localize("ExportJournalHtml.warn_electron")}`
+          `${game.i18n.localize("ExportJournalHtml.warn_electron")}`,
         );
         return;
       }
@@ -50,12 +50,12 @@ class PrintButton {
       if (game.settings.get(`${EJHCONST.MODULE_ID}`, `${EJHCONST.OPT_POPUP}`)) {
         DownloadJournal.Popup(
           HTMLParser.Create(finalPages),
-          journalEntry?.name ?? "Journal"
+          journalEntry?.name ?? "Journal",
         );
       } else {
         DownloadJournal.Tab(
           HTMLParser.Create(finalPages),
-          journalEntry?.name ?? "Journal"
+          journalEntry?.name ?? "Journal",
         );
       }
     });

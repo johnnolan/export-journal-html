@@ -17,7 +17,7 @@ class ModuleSettings {
         config: true,
         default: false,
         type: Boolean,
-      }
+      },
     );
 
     game.settings.register(
@@ -30,7 +30,7 @@ class ModuleSettings {
         config: true,
         default: "",
         type: String,
-      }
+      },
     );
 
     game.settings.register(
@@ -43,7 +43,7 @@ class ModuleSettings {
         config: true,
         default: false,
         type: Boolean,
-      }
+      },
     );
 
     game.settings.register(`${EJHCONST.MODULE_ID}`, `${EJHCONST.OPT_POPUP}`, {

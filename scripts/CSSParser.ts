@@ -21,7 +21,7 @@ class CSSParser {
     if (
       game.settings.get(
         `${EJHCONST.MODULE_ID}`,
-        `${EJHCONST.OPT_REMOVE_BACKGROUND}`
+        `${EJHCONST.OPT_REMOVE_BACKGROUND}`,
       )
     ) {
       rules += this._cssRemoveBackground();
@@ -43,7 +43,7 @@ class CSSParser {
   private static _cssCustom(): string {
     return game.settings.get(
       `${EJHCONST.MODULE_ID}`,
-      `${EJHCONST.OPT_CUSTOM_CSS}`
+      `${EJHCONST.OPT_CUSTOM_CSS}`,
     );
   }
 }
