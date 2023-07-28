@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.6.1 - 2023-07-28
+
+### Bug Fixes
+
+- Fixes issue where content would be removed in the print preview due to greedy Regular Expression. This was causing output to look broken or have entire sections missing.
+
 ## 0.6.0 - 2023-07-28
 
 ### Version Bump
