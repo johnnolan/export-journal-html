@@ -7,8 +7,6 @@
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/johnnolan/export-journal-html/main_workflow.yml?branch=main)
 [![license](https://img.shields.io/badge/license-MIT-blue)](https://github.com/johnnolan/export-journal-html/blob/main/LICENSE)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=johnnolan_export-journal-html&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=johnnolan_export-journal-html)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=johnnolan_export-journal-html&metric=coverage)](https://sonarcloud.io/summary/new_code?id=johnnolan_export-journal-html)
 
 [![Translation status](https://weblate.foundryvtt-hub.com/widgets/export-journal-html/-/main/287x66-black.png)](https://weblate.foundryvtt-hub.com/engage/export-journal-html/)
 
