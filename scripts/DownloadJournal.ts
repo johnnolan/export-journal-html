@@ -16,7 +16,7 @@ class DownloadJournal {
       "toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=780,height=800,top=" +
         (screen.height - 400) +
         ",left=" +
-        (screen.width - 840)
+        (screen.width - 840),
     );
   }
 

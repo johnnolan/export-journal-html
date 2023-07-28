@@ -8,7 +8,7 @@ Hooks.on("init", function () {
 
   Logger.log(
     `Settings for ${EJHCONST.MODULE_NAME} registered successfully.`,
-    "module.init"
+    "module.init",
   );
 });
 
@@ -18,6 +18,6 @@ Hooks.once("ready", async function () {
     async function (app: JournalSheet, _html: JQuery, changes: unknown) {
       PrintButton.Delete();
       await PrintButton.Add(app, changes.pages);
-    }
+    },
   );
 });

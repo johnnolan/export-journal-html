@@ -23,7 +23,7 @@ class HTMLParser {
   }
 
   private static _renderJournalPage(
-    journalPages: Array<JournalEntryPage>
+    journalPages: Array<JournalEntryPage>,
   ): string {
     let html = ``;
     journalPages.forEach((journalPage) => {
@@ -55,11 +55,11 @@ class HTMLParser {
     journalHtml = journalHtml.replaceAll(regUUID, "$2");
     journalHtml = journalHtml.replaceAll(
       regCssUrl,
-      `$1: url("${window.location.protocol + "//" + window.location.host}`
+      `$1: url("${window.location.protocol + "//" + window.location.host}`,
     );
     journalHtml = journalHtml.replaceAll(
       regUrl,
-      `img src="${window.location.protocol + "//" + window.location.host}/`
+      `img src="${window.location.protocol + "//" + window.location.host}/`,
     );
     journalHtml = journalHtml.replaceAll(fontAwesome, "/fonts/fontawesome$1");
 
