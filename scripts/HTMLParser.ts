@@ -48,7 +48,7 @@ class HTMLParser {
   }
 
   private static _regexReplace(journalHtml: string) {
-    const regUUID = /@UUID\[(.+)\]\{(.+)\}/g;
+    const regUUID = /@UUID\[(.*?)\]\{(.*?)\}/g;
     const regUrl = /img src="((?!http:\/\/)(?!https:\/\/))/g;
     const regCssUrl = /(src|background): url\("\.\./g;
     const fontAwesome = /(\/webfonts\/)/g;
