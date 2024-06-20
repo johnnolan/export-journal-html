@@ -29,6 +29,7 @@ module.exports = {
     "!scripts/ModuleSettings.ts",
     "!scripts/DownloadJournal.ts",
     "!scripts/PrintButton.ts",
+    "!scripts/PrintButtonSinglePage.ts",
     "!scripts/Logger.ts",
   ],
 };
