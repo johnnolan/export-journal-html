@@ -2,6 +2,7 @@ import { EJHCONST } from "./EJHCONST";
 import Logger from "./Logger";
 import ModuleSettings from "./ModuleSettings";
 import PrintButton from "./PrintButton";
+import PrintButtonSinglePage from "./PrintButtonSinglePage";
 
 Hooks.on("init", function () {
   ModuleSettings.Register();
@@ -17,7 +18,12 @@ Hooks.once("ready", async function () {
     "renderJournalSheet",
     async function (app: JournalSheet, _html: JQuery, changes: unknown) {
       PrintButton.Delete();
-      await PrintButton.Add(app, changes.pages);
+
+      if(changes.pages) {
+        await PrintButton.Add(app, changes.pages);
+      }else{
+        await PrintButtonSinglePage.Add(app, changes);
+      }
     },
   );
 });
