@@ -5,7 +5,7 @@ import HTMLParser from "./HTMLParser";
 class PrintButton {
   public static async Add(
     app: JournalTextPageSheet,
-    pages: Array<JournalSheet>,
+    changes: any
   ): Promise<void> {
     const uuid = app.object.uuid;
 
@@ -13,17 +13,13 @@ class PrintButton {
       return;
     }
 
-    const pagesArray = pages
-      .filter((f) => f.type === "text")
-      .map((m) => {
-        return m._id;
-      });
+    const page = changes.data;
 
-    if (pagesArray.length === 0) {
+    if (!page) {
       return;
     }
 
-    const link = $(HTMLParser.CreateLink(uuid, pagesArray.join(",")));
+    const link = $(HTMLParser.CreateLink(uuid, page._id));
 
     link.on("click", async (evt) => {
       if (navigator.userAgent.toLowerCase().indexOf(" electron/") !== -1) {
@@ -34,20 +30,15 @@ class PrintButton {
       }
 
       const journalUuid = evt.target?.dataset?.journalUuid;
-      const journalPages = evt.target?.dataset?.journalPages?.split(",") ?? [];
-
       const journalEntry = await fromUuid(journalUuid ?? "");
+
       if (!journalEntry) {
         return;
       }
 
       const finalPages = [];
+      finalPages.push(journalEntry._source)
 
-      for (const journalPageId of journalPages) {
-        finalPages.push(journalEntry.pages.get(journalPageId));
-      }
-
-      console.log(finalPages);
 
       if (game.settings.get(`${EJHCONST.MODULE_ID}`, `${EJHCONST.OPT_POPUP}`)) {
         DownloadJournal.Popup(
@@ -63,7 +54,7 @@ class PrintButton {
     });
 
     $(document).find(".monks-enhanced-journal h4.window-title").after(link);
-    $(document).find(".journal-sheet h4.window-title").after(link);
+
   }
 
   public static Delete(): void {
