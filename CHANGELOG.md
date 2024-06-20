@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.0 - 2024-06-20
+
+### Features
+
+- Add support for Monk's Enhanced Journal - built by @Syrious, thank you!
+- Update module to support Foundry V12
+
 ## 0.6.1 - 2023-07-28
 
 ### Bug Fixes
